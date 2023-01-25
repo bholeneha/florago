@@ -1,0 +1,9 @@
+.Nav-Bar nav {
+    background-color: #EBE9DC;
+    height: 10vmin;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
