@@ -13,22 +13,21 @@ const app = express();
 app.use(logger('dev'));
 app.use(express.json());
 
-// 
+
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
+
+// middleware that adds the user object from a JWT to req.user
+app.use(require('./config/checkToken'));
+
+// Put all API routes here (before the catch-all)
+app.use('/api/users', require('./routes/api/users'));
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
 app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
-
-
-// middleware that adds the user object from a JWT to req.user
-// app.use(require('./config/checkToken'));
-
-// Put all API routes here (before the catch-all)
-// app.use('/api/users', require('./routes/api/users'));
 
 // Protect all routes in the items router
 // const ensureLoggedIn = require('./config/ensureLoggedIn');
