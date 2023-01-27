@@ -18,13 +18,14 @@ app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
 // middleware that adds the user object from a JWT to req.user
-app.use(require('./config/checkToken'));
+// app.use(require('./config/checkToken'));
 
-// Put all API routes here (before the catch-all)
+// API ROUTES
 app.use('/api/users', require('./routes/api/users'));
+app.use('/api/products', require('./routes/api/products'));
+app.use('/api/orders', require('./routes/api/orders'));
 
-// The following "catch all" route (note the *) is necessary
-// to return the index.html on all non-AJAX requests
+// CATCH ALL ROUTE 
 app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });

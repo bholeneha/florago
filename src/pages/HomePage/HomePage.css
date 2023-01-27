@@ -1,0 +1,7 @@
+.HomeBanner,
+.HomeAbout,
+.HomeImage,
+.HomeCategories {
+    background-color: coral;
+    padding: 2vmin;
+}

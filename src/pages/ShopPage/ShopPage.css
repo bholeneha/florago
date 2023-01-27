@@ -1,0 +1,18 @@
+.ShopPage {
+    height: 100%;
+    grid-template-rows: 1fr 10fr;
+    background-color: var(--white);
+}
+
+.ShopArea {
+    display: grid;
+    grid-template-columns: 1.5fr 3.5fr;
+}
+
+.ShopPage aside {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+    margin: 3vmin 2vmin;
+}
