@@ -22,10 +22,10 @@ export default function NavBar({ user, setUser }) {
                 </div>
                 <Link className="Nav-Link" to="/">home</Link>
                 <Link className="Nav-Link" to="/shop">shop</Link>
-                {/* <Link className="Nav-Link" to="/learn">learn</Link> */}
+                <Link className="Nav-Link" to="/learn">learn</Link>
                 {user ?
                     <>
-                        {/* <h1>Hi, {user.name}!</h1> */}
+                        <h1>Hi, {user.name}!</h1>
                         <Link className="Nav-Link" to="/profile">profile</Link>
                         <Link className="Nav-Link" to="/logout" onClick={handleLogOut}>log out</Link>
                     </>

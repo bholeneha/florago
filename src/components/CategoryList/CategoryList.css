@@ -14,12 +14,12 @@
 
 .CategoryList li:hover:not(.active) {
   cursor: pointer;
-  background-color: var(--orange);
-  color: var(--white);
+  background-color: darkgreen;
+  color: white;
 }
 
 .CategoryList li.active {
-  color: var(--text-dark);
-  background-color: var(--tan-1);
-  border: .1vmin solid var(--tan-3);
+  color: darkgreen;
+  background-color: #EBE9DC;
+  border: .1vmin solid grey;
 }

@@ -9,7 +9,6 @@ module.exports = {
     checkout,
 };
 
-// A cart is the unpaid order for a user
 async function cart(req, res) {
     if (req.user) {
         const cart = await Order.getCart(req.user._id);
@@ -21,7 +20,6 @@ async function cart(req, res) {
     }
 }
 
-// Add an item to the cart
 async function addToCart(req, res) {
     console.log(req.params)
 
@@ -40,7 +38,6 @@ async function addToCart(req, res) {
     }
 }
 
-// Updates an item's qty in the cart
 async function setProductQtyInCart(req, res) {
     console.log(req.body)
     const cart = await Order.findById(req.params.cartId);
@@ -48,7 +45,6 @@ async function setProductQtyInCart(req, res) {
     res.json(cart);
 }
 
-// Update the cart's isPaid property to true
 async function checkout(req, res) {
     const cart = await Order.getCart(req.user._id);
     cart.isPaid = true;

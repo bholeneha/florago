@@ -1,14 +1,5 @@
 /* CSS Custom Properties */
-:root {
-  --white: #FFFFFF;
-  --tan-1: #FBF9F6;
-  --tan-2: #E7E2DD;
-  --tan-3: #E2D9D1;
-  --tan-4: #D3C1AE;
-  --orange: darkgreen;
-  --text-light: #968c84;
-  --text-dark: #615954;
-}
+:root {}
 
 *,
 *:before,
@@ -24,8 +15,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(white);
-  /* padding: 2vmin; */
-  height: 100vh;
+  height: 100%;
 }
 
 code {
@@ -71,9 +61,9 @@ code {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: var(--tan-1);
-  color: var(--text-dark);
-  border: .1vmin solid var(--tan-3);
+  background-color: white;
+  color: darkgreen;
+  border: .1vmin solid grey;
   border-radius: 1vmin;
   padding: .6vmin;
   text-align: center;
@@ -82,13 +72,13 @@ code {
 
 .form-container {
   padding: 3vmin;
-  background-color: var(--tan-1);
-  border: .1vmin solid var(--tan-3);
+  background-color: #EBE9DC;
+  border: .1vmin solid grey;
   border-radius: 1vmin;
 }
 
 p.error-message {
-  color: var(--orange);
+  color: red;
   text-align: center;
 }
 
