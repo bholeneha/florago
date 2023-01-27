@@ -24,7 +24,7 @@ Leaf It To Me is an online plant shop web app built using the MERN stack. Visito
 
 Repo: [Leaf It To Me](https://github.com/bholeneha/leaf-it-to-me)
 
-Deployed here: [Leaf It To Me]()
+Deployed here: [Leaf It To Me](https://leafittome.herokuapp.com/)
 
 
 Explore the shop by clicking navigating to shop in nav bar from the landing page. Add and remove items to and from cart. Signup and create a user login to save cart.
