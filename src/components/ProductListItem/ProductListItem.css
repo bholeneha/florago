@@ -31,3 +31,9 @@
   text-align: center;
   color: var(--text-light);
 }
+
+.ProductListItem .buy button {
+  background-color: #EBE9DC;
+  color: darkgreen;
+  border: .1vmin solid grey;
+}
