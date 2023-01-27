@@ -1,4 +1,5 @@
 .LineItem {
+  justify-self: center;
   width: 100%;
   display: grid;
   grid-template-columns: 3vw 15.35vw 5.75vw 5.25vw;
@@ -9,6 +10,10 @@
   font-size: 1.5vw;
 }
 
+.LineItem td {
+  margin: 0 4vmin;
+}
+
 .LineItem:last-child {
   border-bottom: .1vmin solid var(--tan-3);
 }
@@ -17,7 +22,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.3vw;
+  font-size: 1.5vw;
+}
+
+.LineItem .qty span {
+  margin: 0 2vmin;
 }
 
 .LineItem .ext-price {
@@ -30,4 +39,3 @@
 .LineItem button {
   margin: 0;
 }
-

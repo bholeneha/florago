@@ -23,7 +23,7 @@ const orderSchema = new Schema({
 },
     {
         timestamps: true,
-        toJSON: { virtual: true },
+        toJSON: { virtuals: true },
     });
 
 orderSchema.virtual('orderTotal').get(function () {
@@ -38,17 +38,20 @@ orderSchema.virtual('orderId').get(function () {
     return this.id.slice(-6).toUpperCase()
 })
 
-orderSchema.statics.getCart = function (userId) {
+orderSchema.statics.getCart = function (userId, cartId) {
     return this.findOneAndUpdate(
-        { user: userId, isPaid: false },
+        { _id: cartId, isPaid: false },
         { user: userId },
-        { upsert: true, new: true }
+        // { upsert: true, new: true }
     )
 }
 
 orderSchema.methods.addProductToCart = async function (productId) {
+    console.log(productId)
     const cart = this;
-    const lineItem = cart.lineItems.find(lineItem => lineItem.product._id.equals(productId));
+    console.log(cart)
+    const lineItem = cart.lineItems.find(lineItem => lineItem.product?._id.equals(productId));
+    console.log(lineItem)
     if (lineItem) {
         lineItem.qty += 1;
     } else {
@@ -58,9 +61,9 @@ orderSchema.methods.addProductToCart = async function (productId) {
     return cart.save();
 }
 
-orderSchema.methods.setItemQty = function (itemId, newQty) {
+orderSchema.methods.setProductQty = function (productId, newQty) {
     const cart = this;
-    const lineItem = cart.lineItems.find(lineItem => lineItem.item._id.equals(itemId));
+    const lineItem = cart.lineItems.find(lineItem => lineItem.product._id.equals(productId));
     if (lineItem && newQty <= 0) {
         lineItem.remove();
     } else if (lineItem) {

@@ -2,27 +2,26 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  /* justify-content: space-between; */
 }
 
 .Header {
   background-color: #EBE9DC;
-  height: 10vmin;
+  height: 13vh;
 }
 
 .Main {
-  height: auto;
+  height: 75vh;
 }
 
 .Footer {
   display: flex;
   flex-direction: column;
-  /* position: fixed; */
-  left: 0;
-  bottom: 0;
-  height: 25vmin;
+  height: 22vh;
   width: 100%;
   background-color: #EBE9DC;
-  color: black;
+  color: darkgreen;
   text-align: center;
 }
 
@@ -34,9 +33,14 @@
 }
 
 .Footer form * {
-  width: 50vmin;
+  width: 30vmin;
 }
 
 .Footer form input {
   text-align: center;
+}
+
+h1 {
+  color: darkgreen;
+  opacity: 85%;
 }

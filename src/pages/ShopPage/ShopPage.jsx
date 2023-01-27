@@ -4,12 +4,14 @@ import * as ordersAPI from '../../utilities/orders-api';
 import './ShopPage.css';
 import ProductList from '../../components/ProductList/ProductList';
 import CategoryList from '../../components/CategoryList/CategoryList';
+import { useContext } from 'react';
+import { CartContext } from '../App/App';
 
-
-export default function ShopPage({ cart, setCart }) {
+export default function ShopPage({ setCart }) {
     const [products, setProducts] = useState([]);
     const [activeCat, setActiveCat] = useState('');
     const categoriesRef = useRef([]);
+    const cart = useContext(CartContext);
 
     useEffect(function () {
         async function getProducts() {
@@ -23,9 +25,10 @@ export default function ShopPage({ cart, setCart }) {
     }, []);
 
     /*-- Event Handlers --*/
-    const cartId = cart._id
-    async function handleAddToOrder(productId, cartId) {
-        const updatedCart = await ordersAPI.addProductToCart(productId);
+    async function handleAddToOrder(productId) {
+        const updatedCart = await ordersAPI.addProductToCart(productId, cart._id);
+        // console.log(`LALALAL`)
+        // console.log(updatedCart)
         setCart(updatedCart);
     }
 

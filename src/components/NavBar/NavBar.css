@@ -5,5 +5,14 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+}
 
+.Nav-Bar nav a {
+    text-decoration: none;
+    color: darkgreen;
+}
+
+.Nav-Bar nav a:hover {
+    font-size: larger;
+    color: green;
 }

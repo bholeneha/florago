@@ -9,12 +9,14 @@ export function getCart() {
 
 // Add an item to the cart
 export function addProductToCart(productId, cartId) {
+  console.log(productId, cartId)
   return sendRequest(`${BASE_URL}/cart/${cartId}/products/${productId}`, 'POST');
 }
 
 // Update the item's qty in the cart
-export function setProductQtyInCart(productId, newQty) {
-  return sendRequest(`${BASE_URL}/cart/qty`, 'PUT', { productId, newQty });
+export function setProductQtyInCart(productId, newQty, cartId) {
+  // console.log(productId, newQty)
+  return sendRequest(`${BASE_URL}/cart/${cartId}/qty`, 'PUT', { cartId, productId, newQty });
 }
 
 export function checkout() {

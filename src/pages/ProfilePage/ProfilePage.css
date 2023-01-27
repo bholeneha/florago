@@ -1,0 +1,26 @@
+.UserNavList {
+    color: green;
+    list-style: none;
+    padding: 0;
+    font-size: 1.7vw;
+}
+
+.UserNavList li {
+    list-style: none;
+    padding: .6vmin;
+    text-align: center;
+    border-radius: .5vmin;
+    margin-bottom: .5vmin;
+}
+
+.UserNavList li:hover:not(.active) {
+    cursor: pointer;
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+.UserNavList li.active {
+    color: var(--text-dark);
+    background-color: var(--tan-1);
+    border: .1vmin solid var(--tan-3);
+}

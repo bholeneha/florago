@@ -2,16 +2,20 @@ import './CartPage.css';
 import LineItem from '../../components/LineItem/LineItem';
 import * as ordersAPI from '../../utilities/orders-api';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { CartContext } from '../App/App';
 
-export default function Cart({ order, setCart }) {
+
+export default function Cart({ setCart }) {
+  const cart = useContext(CartContext);
+
+  console.log('lalaa')
+  console.log(cart)
 
   const navigate = useNavigate();
-  let lineItems = []
-
-  if (!order) return lineItems;
 
   async function handleChangeQty(productId, newQty) {
-    const updatedCart = await ordersAPI.setProductQtyInCart(productId, newQty);
+    const updatedCart = await ordersAPI.setProductQtyInCart(productId, newQty, cart.id);
     setCart(updatedCart);
   }
 
@@ -20,54 +24,58 @@ export default function Cart({ order, setCart }) {
     navigate('/orders');
   }
 
-  if (order) {
-    lineItems = order.lineItems.map(item =>
-      <LineItem
-        lineItem={item}
-        isPaid={order.isPaid}
-        handleChangeQty={handleChangeQty}
-        key={item._id}
-      />
-    );
-  } else {
-    lineItems = null
-  }
-
+  const lineItems = cart.lineItems.map(product =>
+    <LineItem
+      lineItem={product}
+      isPaid={cart.isPaid}
+      handleChangeQty={handleChangeQty}
+      key={product._id}
+    />
+  )
 
   return (
     <div className="OrderDetail">
       <h1>Cart</h1>
 
       <div className="section-heading">
-
-        {order.isPaid ?
-          <span>ORDER <span className="smaller">{order.orderId}</span></span>
-          :
-          <span>NEW ORDER</span>
-        }
-        <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
-      </div>
-
-      <div className="line-item-container flex-ctr-ctr flex-col scroll-y">
-        {(lineItems) ?
+        {cart.lineItems.length ?
           <>
-            {lineItems}
-            <section className="total">
-              {order.isPaid ?
-                <span className="right">TOTAL&nbsp;&nbsp;</span>
-                :
-                <button
-                  className="btn-sm"
-                  onClick={handleCheckout}
-                  disabled={!lineItems.length}
-                >CHECKOUT</button>
-              }
-              <span>{order.totalQty}</span>
-              <span className="right">${order.orderTotal.toFixed(2)}</span>
-            </section>
+            <span>ORDER NUMBER: <span className="smaller">{cart.orderId}</span></span>
+            <span>{new Date(cart.updatedAt).toLocaleDateString()}</span>
           </>
           :
-          <div className="empty-cart">Cart is Empty!</div>
+          <h2>Cart is Empty</h2>
+        }
+      </div>
+
+      <div className="LineItems">
+        {lineItems.length ?
+          <>
+            <table>
+              <th>
+                <td>Item</td>
+                <td>Price</td>
+                <td>Quantity</td>
+                <td>Total</td>
+              </th>
+              {lineItems}
+
+              <section className="total">
+                <span className="right">TOTAL&nbsp;&nbsp;</span>
+                :
+                {/* <span>{cart.totalQty}</span> */}
+                <span className="right">${cart.orderTotal.toFixed(2)}</span>
+              </section>
+            </table>
+            <button
+              className="btn-sm"
+              onClick={handleCheckout}
+              disabled={!lineItems.length}
+            >CHECKOUT</button>
+          </>
+
+          :
+          <div className="empty-cart">Checkout Our Plant Shop!</div>
         }
       </div>
     </div>

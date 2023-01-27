@@ -23,24 +23,27 @@ async function cart(req, res) {
 
 // Add an item to the cart
 async function addToCart(req, res) {
+    console.log(req.params)
+
     if (req.user) {
-        const cart = await Order.getCart(req.user._id);
-        await cart.addProductToCart(req.params.id);
+        const cart = await Order.getCart(req.user?._id, req.params.cartId);
+        await cart.addProductToCart(req.params.productId);
         res.status(200).json(cart);
-    } if (req.params.cardId) {
+    } if (req.params.cartId) {
         const cart = await Order.findById(req.params.cartId)
-        await cart.addProductToCart(req.params.productID)
+        await cart.addProductToCart(req.params.productId)
         res.status(200).json(cart)
     } else {
         const cart = new Order()
-        await cart.addProductToCart(req.params.id)
+        await cart.addProductToCart(req.params.productId)
         res.status(200).json(cart)
     }
 }
 
 // Updates an item's qty in the cart
 async function setProductQtyInCart(req, res) {
-    const cart = await Order.getCart(req.user._id);
+    console.log(req.body)
+    const cart = await Order.findById(req.params.cartId);
     await cart.setProductQty(req.body.productId, req.body.newQty);
     res.json(cart);
 }

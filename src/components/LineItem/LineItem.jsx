@@ -1,29 +1,30 @@
 import './LineItem.css';
 
 export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
+  console.log(`This is line item`)
+  console.log(lineItem)
   return (
-    <div className="LineItem">
-      <div className="flex-ctr-ctr">{lineItem.item.emoji}</div>
-      <div className="flex-ctr-ctr flex-col">
-        <span className="align-ctr">{lineItem.item.name}</span>
-        <span>{lineItem.item.price.toFixed(2)}</span>
-      </div>
-      <div className="qty" style={{ justifyContent: isPaid && 'center' }}>
-        {!isPaid &&
-          <button
-            className="btn-xs"
-            onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty - 1)}
-          >−</button>
-        }
-        <span>{lineItem.qty}</span>
-        {!isPaid &&
-          <button
-            className="btn-xs"
-            onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty + 1)}
-          >+</button>
-        }
-      </div>
-      <div className="ext-price">${lineItem.extPrice.toFixed(2)}</div>
-    </div>
+    <tr className="LineItem">
+      <td><span>{lineItem.product.name}</span></td>
+      <td><span>{lineItem.product.price.toFixed(2)}</span></td>
+      <td>
+        <div className="qty" style={{ justifyContent: isPaid && 'center' }}>
+          {!isPaid &&
+            <button
+              onClick={() => handleChangeQty(lineItem.product._id, lineItem.qty - 1)}
+            >−</button>
+          }
+          <span>{lineItem.qty}</span>
+          {!isPaid &&
+            <button
+              onClick={() => handleChangeQty(lineItem.product._id, lineItem.qty + 1)}
+            >+</button>
+          }
+        </div>
+      </td>
+      <td>
+        <div className="ext-price">${lineItem.extPrice.toFixed(2)}</div>
+      </td>
+    </tr>
   );
 }

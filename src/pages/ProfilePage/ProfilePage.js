@@ -1,3 +1,4 @@
+import './ProfilePage.css'
 import * as usersService from '../../utilities/users-service'
 
 export default function ProfilePage() {
@@ -10,7 +11,17 @@ export default function ProfilePage() {
     return (
         <>
             <h1>Profile</h1>
-            <button onClick={handleCheckToken}>Check When My Login Expires</button>
+            <div className="ShopArea">
+                <aside className='UserNavList'>
+                    <ul>
+                        <li>Manage Your Account</li>
+                        <li>Order History</li>
+                    </ul>
+                </aside>
+                <div className="UserInfoArea">
+
+                </div>
+            </div>
         </>
     )
 }
