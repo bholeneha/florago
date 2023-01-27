@@ -36,7 +36,7 @@ export default class SignUpForm extends Component {
     render() {
         const disable = this.state.password !== this.state.confirm;
         return (
-            <div>
+            <div className='SignUpForm'>
                 <div className="form-container">
                     <form autoComplete="off" onSubmit={this.handleSubmit}>
                         <label>Name</label>

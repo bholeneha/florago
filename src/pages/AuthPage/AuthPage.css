@@ -1,7 +1,13 @@
 .AuthPage {
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    flex-grow: 1;
+    width: 80vw;
+    margin: 5vmin;
+}
+
+.AuthPage>div {
+    align-self: center;
 }
