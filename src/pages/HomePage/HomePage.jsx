@@ -10,7 +10,7 @@ export default function HomePage() {
                 <Link className="Nav-Link" to="/learn">Learn</Link>
             </div>
             <div className="HomeImage">
-                <p>Nice Indoor Plant Image Here</p>
+                {/* <p>Nice Indoor Plant Image Here</p> */}
             </div>
             <div className="HomeCategories">
                 <h1>Shop Categories</h1>
