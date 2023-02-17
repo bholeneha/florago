@@ -1,6 +1,6 @@
 # LEAF IT TO ME 
 
-Leaf It To Me is an online plant shop web app built using the MERN stack. Visitors can browse the app freely and add and remove items from the shopping cart. Users can sign up, log in and their carts are automatically saved. More feature to come. 
+Leaf It To Me is an online plant shop that provides users with a wide variety of plants to explore and purchase through a shopping cart system. Built using the MERN stack, it offers a user-friendly interface and including secure user authentication through the use of JWT tokens. Users can easily sign up, log in, and have their carts automatically saved, and additional features to be added to enhance the overall user experience. Leaf it to me is a destination for all plant enthusiasts. 
 
 # First Look 
 
