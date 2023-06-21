@@ -1,39 +1,40 @@
-import './App.css';
-import { useState, useEffect, createContext } from 'react';
-import { Routes, Route, Navigate } from "react-router-dom"
-import AuthPage from '../AuthPage/AuthPage';
-import HomePage from '../HomePage/HomePage';
-import ShopPage from '../ShopPage/ShopPage';
-import CartPage from '../CartPage/CartPage'
-import ProfilePage from '../ProfilePage/ProfilePage';
+import "./App.css";
+import { useState, useEffect, createContext } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import AuthPage from "../AuthPage/AuthPage";
+import HomePage from "../HomePage/HomePage";
+import ShopPage from "../ShopPage/ShopPage";
+import CartPage from "../CartPage/CartPage";
+import ProfilePage from "../ProfilePage/ProfilePage";
 // import LearnPage from '../LearnPage/LearnPage';
-import NavBar from '../../components/NavBar/NavBar'
-import * as ordersAPI from '../../utilities/orders-api';
-import { getUser } from '../../utilities/users-service'
+import NavBar from "../../components/NavBar/NavBar";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import Newsletter from "../../components/Newsletter/Newsletter";
+import * as ordersAPI from "../../utilities/orders-api";
+import { getUser } from "../../utilities/users-service";
 
 export const CartContext = createContext();
 
 function App() {
-  const [user, setUser] = useState(getUser())
+  const [user, setUser] = useState(getUser());
   const [cart, setCart] = useState(null);
 
   useEffect(function () {
     async function getCart() {
       const order = await ordersAPI.getCart();
-      console.log(order)
+      console.log(order);
       setCart(order);
     }
     getCart();
   }, []);
 
-  console.log(cart)
+  console.log(cart);
 
   return (
     <CartContext.Provider value={cart}>
       <div className="App">
-        <header className="Header">
-          <NavBar user={user} setUser={setUser} />
-        </header>
+        <Header user={user} setUser={setUser} />
         <main className="Main">
           <Routes>
             <Route path="/home" element={<HomePage />} />
@@ -46,15 +47,8 @@ function App() {
             <Route path="/*" element={<Navigate to="/home" />} />
           </Routes>
         </main>
-        <footer className="Footer">
-          <p>Be the first to know about new arrivals</p>
-          <form>
-            <input type="text" placeholder="Email"></input>
-            <button type="submit"><span>Subscribe</span></button>
-          </form>
-          <div className="SocialMediaIcons"></div>
-          <p> Copyright, Leaf It To Me Plant Shop</p>
-        </footer>
+        <Newsletter />
+        <Footer />
       </div>
     </CartContext.Provider>
   );

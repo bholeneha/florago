@@ -1,5 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;700&family=Lato:wght@100;300;400;700&display=swap');
+
 /* CSS Custom Properties */
-:root {}
+:root {
+  --white: #FFFFFF;
+  --light-grey: #F7F7F7;
+  --med-grey: #E7E7E7;
+  --dark-grey: #848484;
+  --green: #688466;
+  --earth: #6F6C86;
+  --dark-earth: #2c2A24;
+  --soft-black: #262626;
+}
+
+/* Overall Styling */
 
 *,
 *:before,
@@ -7,14 +20,19 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Lato', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(white);
+  background-color: var(--white);
+  color: var(--dark-grey);
   height: 100%;
 }
 
@@ -27,6 +45,59 @@ code {
   height: 100%;
 }
 
+/* Global Sizing / Styling */
+
+h1, h2, h3, h4, h5, h6, a, button{
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--dark-earth);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.17rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.83rem;
+}
+
+h6 {
+  font-size: 0.67rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-grey);
+  font-weight: 500;
+
+
+  &:hover{
+    color: var(--soft-black);
+  }
+}
+
+
+
+
+
+
+
+// EXTRA 
 .align-ctr {
   text-align: center;
 }
@@ -96,14 +167,7 @@ label {
 }
 
 input {
-  padding: 1vmin;
-  font-size: 2vmin;
-  border: .1vmin solid var(--tan-3);
-  border-radius: .5vmin;
-  color: var(--text-dark);
-  background-image: none !important;
-  /* prevent lastpass */
-  outline: none;
+  color: var(--dark-grey);
 }
 
 input:focus {
@@ -112,17 +176,15 @@ input:focus {
 
 button,
 a.button {
-  color: black;
+  background-color: var(--soft-black);
+  color: var(--white);
   transition: all 0.3s;
   position: relative;
   margin: 1vmin;
-  padding: 1vmin;
-  font-size: 2vmin;
-  font-weight: bold;
+  padding: 1.25rem 2.5rem;
+  font-size: 0.75rem;
   text-decoration: none;
   text-align: center;
-  border: .1vmin solid pink;
-  border-radius: .5vmin;
   outline: none;
   cursor: pointer;
 }
@@ -137,12 +199,6 @@ button::before {
   z-index: 1;
   opacity: 0;
   transition: all 0.3s;
-  border-top-width: 1px;
-  border-bottom-width: 1px;
-  border-top-style: solid;
-  border-bottom-style: solid;
-  border-top-color: rgba(255, 255, 255, 0.5);
-  border-bottom-color: rgba(255, 255, 255, 0.5);
   transform: scale(0.1, 1);
 }
 
@@ -170,8 +226,4 @@ button::after {
 button:hover::after {
   opacity: 0;
   transform: scale(0.1, 1);
-}
-
-h1 {
-  opacity: 25%;
 }

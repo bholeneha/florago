@@ -16,6 +16,7 @@ const Product = require('./models/product');
 
     await Product.deleteMany({});
     const products = await Product.create([
+
         { name: 'Snake Plant', categories: [categories[0]._id, categories[1]._id], size: 6, description: `Snake Plants are one of the easiest plants to take care of. They do well in shady or bright areas, but be careful not to move them from one extreme to the other too quickly. Lucky for owners, these plants are quite resilient as owners only need to watch out for overwatering and freezing temperatures.`, price: 7.95 },
         { name: 'Monstera', categories: [categories[1]._id], size: 10, description: `Monstera Plants are well know for their fun "Swiss Cheese" appearance. They enjoy bright, indirect sunlight and plenty of water. Their foliage can grow quite large, offering different height dimensions and a nice sense of shade.`, price: 11.95 },
         { name: 'Prayer Plant', categories: [categories[2]._id, categories[3]._id], size: 4, description: `With their beautiful pattern, the Prayer Plant has always been a welcome addition to any home.They get their name from the way their leaves open up in the sun and close again at dusk, coming together like hands praying.Owners will need to be a bit more attentive for these plants as they like their soil to be just damp, light levels low, and humidity at a high.`, price: 5.95 },

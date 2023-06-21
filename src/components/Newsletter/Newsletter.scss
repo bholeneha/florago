@@ -1,0 +1,41 @@
+.Newsletter {
+    background-color: var(--green);
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 2rem;
+
+    &-Heading { 
+        width: 40%;
+        text-align: left;
+        padding:  0 4rem 0 3rem;
+        h1{
+            color: var(--white);
+            letter-spacing: .1rem;
+            font-size: 2.25rem;
+        }
+    }
+
+    &-Form{
+        width: 60%;
+        padding-right: 3rem;
+
+        input {
+            width: 40vw;
+            padding-left: 1rem;
+        }
+
+        button {
+
+            text-align: center;
+        }
+
+
+    }
+
+
+
+
+}
