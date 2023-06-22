@@ -24,7 +24,7 @@ Flora Go is an online plant shop that provides users with a wide variety of plan
 
 Repo: [FLORA GO](https://github.com/bholeneha/florago)
 
-Deployed here: [FLORA GO](https://leafittome.herokuapp.com/)
+Deployed here: [FLORA GO](https://florago-59bc7bf2d4cb.herokuapp.com/)
 
 
 Explore the shop by clicking navigating to shop in nav bar from the landing page. Add and remove items to and from cart. Signup and create a user login to save cart.
