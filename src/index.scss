@@ -50,6 +50,8 @@ code {
 h1, h2, h3, h4, h5, h6, a, button{
   font-family: 'Cormorant Garamond', serif;
   color: var(--dark-earth);
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -181,12 +183,11 @@ a.button {
   transition: all 0.3s;
   position: relative;
   margin: 1vmin;
-  padding: 1.25rem 2.5rem;
-  font-size: 0.75rem;
-  text-decoration: none;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
   text-align: center;
-  outline: none;
   cursor: pointer;
+  border: none;
 }
 
 button::before {

@@ -21,10 +21,16 @@
     &-Form{
         width: 60%;
         padding-right: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         input {
             width: 40vw;
-            padding-left: 1rem;
+            height: 3.5rem;
+            padding:1rem;
+            font-size: 1rem;
+            border: none;
         }
 
         button {

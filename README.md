@@ -1,6 +1,6 @@
-# LEAF IT TO ME 
+# FLORA GO
 
-Leaf It To Me is an online plant shop that provides users with a wide variety of plants to explore and purchase through a shopping cart system. Built using the MERN stack, it offers a user-friendly interface and including secure user authentication through the use of JWT tokens. Users can easily sign up, log in, and have their carts automatically saved, and additional features to be added to enhance the overall user experience. Leaf it to me is a destination for all plant enthusiasts. 
+Flora Go is an online plant shop that provides users with a wide variety of plants to explore and purchase through a shopping cart system. Built using the MERN stack, it offers a user-friendly interface and including secure user authentication through the use of JWT tokens. Users can easily sign up, log in, and have their carts automatically saved, and additional features to be added to enhance the overall user experience. Leaf it to me is a destination for all plant enthusiasts. 
 
 # First Look 
 
@@ -22,9 +22,9 @@ Leaf It To Me is an online plant shop that provides users with a wide variety of
 
 ## Getting Started
 
-Repo: [Leaf It To Me](https://github.com/bholeneha/leaf-it-to-me)
+Repo: [FLORA GO](https://github.com/bholeneha/florago)
 
-Deployed here: [Leaf It To Me](https://leafittome.herokuapp.com/)
+Deployed here: [FLORA GO](https://leafittome.herokuapp.com/)
 
 
 Explore the shop by clicking navigating to shop in nav bar from the landing page. Add and remove items to and from cart. Signup and create a user login to save cart.
