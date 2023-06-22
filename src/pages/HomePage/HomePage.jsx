@@ -60,9 +60,10 @@ export default function HomePage() {
           </Link>
         </div>
 
-        <div>
-          <div>Image 1</div>
-          <div>Image 2</div>
+        <div className="Home-About-Images">
+          <div className="About-Image1">
+            <div className="About-Image2"></div>
+          </div>
         </div>
       </div>
     </div>

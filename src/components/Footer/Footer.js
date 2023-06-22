@@ -12,9 +12,9 @@ export default function Footer() {
 
         <div>
           <h3>CONTACT US</h3>
-          <p>Address</p>
-          <p>Phone Number</p>
-          <p>Email</p>
+          <p>123 Mock Street, Anytown, USA</p>
+          <p>(555) 123-4567</p>
+          <p>example@email.com</p>
         </div>
       </div>
 

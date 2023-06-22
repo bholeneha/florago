@@ -53,7 +53,7 @@
 
     // CATEGORIES SECTION
     &-Categories {
-        height: 50vh;
+        height: 70vh;
         padding: 3rem;
 
         h1{
@@ -70,9 +70,11 @@
             gap: 2rem;
             height: 70%;
 
+
             .Home-Category-Card {
                 width: 25%;
                 height: 100%;
+                border: 2px solid var(--med-grey);
             }
         }
     }
@@ -93,6 +95,38 @@
             h1{
                 letter-spacing: .1rem;
                 font-size: 2.25rem;
+            }
+        }
+
+        &-Images {
+            align-self: flex-start;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+
+            .About-Image1 {
+                background-image: url(../../assets/about-image1.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 400px;
+                height: 250px;
+                position: absolute;
+                background-position-y: 70%;
+                border: 20px solid white;
+            }
+
+            .About-Image2{
+                background-image: url(../../assets/about-image2.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 350px;
+                height: 200px;
+                position: relative;
+                top: 50px;
+                right: -250px;
+                background-position-y: 50%;
+                border: 20px solid white;
             }
         }
     }
