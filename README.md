@@ -2,17 +2,6 @@
 
 Flora Go is an online plant shop that provides users with a wide variety of plants to explore and purchase through a shopping cart system. Built using the MERN stack, it offers a user-friendly interface and including secure user authentication through the use of JWT tokens. Users can easily sign up, log in, and have their carts automatically saved, and additional features to be added to enhance the overall user experience. Leaf it to me is a destination for all plant enthusiasts. 
 
-# First Look 
-
-### Landing Page
-![Landing Page](screenshots/landing-page.png) 
-
-### Shop Page
-![Shop Page](screenshots/shop-page.png)
-
-### Cart Page
-![Cart Page](screenshots/cart-page.png)
-
 ## Technology Used
 - MongoDB Atlas Cloud Database
 - React
