@@ -1,20 +1,24 @@
-import './ProductListItem.css';
+import "./ProductListItem.scss";
+import ProductImage from "../../assets/shop2.jpg";
 
 export default function ProductListItem({ product, handleAddToOrder }) {
   return (
     <div className="ProductListItem">
       <div>
-        <div>
-          <img src="../../img/shop.jpg" />
-        </div>
-        <div className="buy">
-          <span>${product.price.toFixed(2)}</span>
-          <button className="btn-sm" onClick={() => handleAddToOrder(product._id)}>
-            <span>add to cart</span>
-          </button>
-        </div>
+        {/* Product Image */}
+        <img src={ProductImage} />
+
+        {/* Product Name and Price */}
+        <div className="name">{product.name}</div>
+        <div>${product.price.toFixed(2)}</div>
+
+        {/* Add To Cart Button */}
+        {/* <div className="buy"> */}
+        <button onClick={() => handleAddToOrder(product._id)}>
+          ADD TO CART
+        </button>
+        {/* </div> */}
       </div>
-      <div className="name">{product.name}</div>
     </div>
   );
 }

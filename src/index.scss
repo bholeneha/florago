@@ -93,6 +93,18 @@ a {
   }
 }
 
+ul {
+  list-style: none;
+}
+
+.form {
+  padding: 3vmin;
+  background-color: var(--white);
+  border: 1px solid var(--med-grey);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 
 
@@ -143,12 +155,7 @@ a {
   font-size: 2vmin;
 }
 
-.form-container {
-  padding: 3vmin;
-  background-color: #EBE9DC;
-  border: .1vmin solid grey;
-  border-radius: 1vmin;
-}
+
 
 p.error-message {
   color: red;

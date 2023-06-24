@@ -1,0 +1,19 @@
+.ProductListItem {
+  /* flex-grow: 1; */
+  width: 30%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3vmin;
+  padding: 2vmin;
+  color: var(--dark-grey);
+  background-color: var(--white);
+  border: .1vmin solid var(--dark-grey);
+
+  img {
+    width: 90%;
+
+  }
+}
